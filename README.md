@@ -44,9 +44,30 @@ Jeśli wszystko poszło dobrze - masz dostęp do aplikacji pod adresem domenowym
 
 # Konfiguracja firewall pod Ubuntu i Docker
 
+Ubuntu korzysta z firewalla UFW.
+Manual:
+https://help.ubuntu.com/community/UFW
+
+Zanim zaczniesz coś konfigurować sprawdź czy działa
+sudo ufw status
+
+PRZED uruchomieniem (żeby nie wycięło komunikacji)
+```
+sudo ufw allow ssh
+```
+
+Uruchomienie (na stałe)
+sudo ufw enable
+
+Wyłączenie (na stałe)
+sudo ufw disable
+
+Przeładowanie reguł 
+sudo ufw reload
+
 I'd like to thank to https://stackoverflow.com/users/553374/feng for tutorial:
 https://stackoverflow.com/questions/30383845/what-is-the-best-practice-of-docker-ufw-under-ubuntu
-- na stronie należy znaleźć `Solving UFW and Docker issues` dodać podane linie do odpowiedniego pliku
+- na stronie należy znaleźć `Solving UFW and Docker issues` dodać podane linie do odpowiedniego pliku ufw i zrestartować serwer
 a potem wystawić na świat te usługi które są za dockerem - np. port 80 i 443 i 3306
 
 ```
