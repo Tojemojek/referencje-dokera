@@ -1,0 +1,20 @@
+version: '3.3'
+services:
+  db:
+    image: mysql:5.7
+    restart: always
+    container_name: TWOJA_NAZWA_DLA_KONTENERA
+    environment:
+        MYSQL_ROOT_PASSWORD: 'root_password'
+        MYSQL_DATABASE: 'nazwa_bazy'
+        MYSQL_USER: 'user'
+        MYSQL_PASSWORD: 'password'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    networks:
+      - db_net
+
+networks:
+  db_net:

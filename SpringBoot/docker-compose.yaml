@@ -1,0 +1,9 @@
+ankieta:
+  container_name: TWOJA_NAZWA_KONTENERA
+  restart: always
+  build: .
+  volumes:
+    - /var/log/twoja-app/:/var/log/twoja-app/
+  environment:
+    - VIRTUAL_HOST=adres.appki.w.twojej.domenie
+    - LETSENCRYPT_HOST=adres.appki.w.twojej.domenie
